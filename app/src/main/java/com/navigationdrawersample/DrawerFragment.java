@@ -1,10 +1,12 @@
 package com.navigationdrawersample;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,4 +43,9 @@ public class DrawerFragment extends Fragment {
         menu.add(new MenuNavItem("Home",R.drawable.ic_home));
         menu.add(new MenuNavItem("About",R.drawable.ic_about));
     }
+    public static interface ClickListener{
+        public void onClick(View view,int position);
+        public void onLongClick(View view,int position);
+    }
+    
 }
